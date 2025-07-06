@@ -1,0 +1,95 @@
+@startuml
+' UML/ERD for Java Interview Prep Platform
+entity User {
+  *id : Long
+  *username : String
+  *email : String
+  *password : String
+  *role : String
+}
+entity Track {
+  *id : Long
+  *name : String
+  *description : String
+  *level : String
+}
+entity Topic {
+  *id : Long
+  *name : String
+  *description : String
+  *track_id : Long
+}
+entity Question {
+  *id : Long
+  *title : String
+  *content : String
+  *answer : String
+  *explanation : String
+  *difficulty : String
+  *topic_id : Long
+  *company : String
+}
+entity Checklist {
+  *id : Long
+  *item : String
+  *track_id : Long
+  *completed : Boolean
+  *user_id : Long
+}
+entity Progress {
+  *id : Long
+  *user_id : Long
+  *track_id : Long
+  *topic_id : Long
+  *score : Integer
+  *readiness : Integer
+}
+entity Bookmark {
+  *id : Long
+  *user_id : Long
+  *question_id : Long
+}
+entity Revision {
+  *id : Long
+  *user_id : Long
+  *question_id : Long
+  *revised : Boolean
+}
+entity CodePractice {
+  *id : Long
+  *user_id : Long
+  *question_id : Long
+  *code : String
+  *result : String
+  *timestamp : Date
+}
+entity BlogPost {
+  *id : Long
+  *title : String
+  *content : String
+  *author : String
+  *created_at : Date
+}
+entity SystemDesign {
+  *id : Long
+  *user_id : Long
+  *title : String
+  *diagram : String
+  *notes : String
+  *shared : Boolean
+}
+User ||--o{ Checklist
+User ||--o{ Progress
+User ||--o{ Bookmark
+User ||--o{ Revision
+User ||--o{ CodePractice
+User ||--o{ SystemDesign
+Track ||--o{ Topic
+Track ||--o{ Checklist
+Track ||--o{ Progress
+Topic ||--o{ Question
+Topic ||--o{ Progress
+Question ||--o{ Bookmark
+Question ||--o{ Revision
+Question ||--o{ CodePractice
+@enduml

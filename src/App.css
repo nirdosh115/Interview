@@ -1,0 +1,127 @@
+body {
+  background: linear-gradient(135deg, #1a1333 0%, #2c2250 100%);
+  color: #ffd600;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.5s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffd600;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5em;
+}
+
+.MuiPaper-root {
+  background: rgba(40,30,80,0.92) !important;
+  color: #ffd600 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 24px #00000033 !important;
+  margin-bottom: 2em;
+  transition: box-shadow 0.3s;
+}
+
+.MuiPaper-root:hover {
+  box-shadow: 0 8px 32px #ffd60033 !important;
+}
+
+.MuiButton-root, .MuiButton-containedPrimary {
+  background: linear-gradient(90deg, #512da8 60%, #ffd600 100%);
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #ffd60044;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.MuiButton-root:hover {
+  background: linear-gradient(90deg, #ffd600 0%, #512da8 100%);
+  color: #512da8 !important;
+  box-shadow: 0 4px 16px #ffd60077;
+}
+
+.MuiInputBase-root, .MuiTextField-root {
+  background: #2c2250 !important;
+  color: #ffd600 !important;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+.MuiInputBase-input, .MuiTextField-root input {
+  color: #ffd600 !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #2c2250;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffd600;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .MuiContainer-root {
+    padding: 0 0.5em !important;
+  }
+  .MuiPaper-root {
+    margin-bottom: 1em;
+    padding: 1em !important;
+  }
+  h1, h2, h3 {
+    font-size: 1.3em !important;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
